@@ -4,7 +4,7 @@ import { GetItemsResponse } from "./connector";
 
 export function toItem(response: GetItemsResponse): Item {
     return {
-        condition: response.condition,
+        condition: response.attributes.find(({id}) => id === 'ITEM_CONDITION')?.value_name || response.condition,
         free_shipping: response.shipping.free_shipping,
         id: response.id,
         picture: response.thumbnail,

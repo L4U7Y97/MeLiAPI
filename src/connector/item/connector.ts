@@ -14,7 +14,13 @@ export interface GetItemsResponse {
     shipping: {
         free_shipping: boolean,
     },
+    attributes: {
+        id: string,
+        value_name: string,
+      }[]
 }
+
+
 
 export async function getItemsConnector(query: string): Promise<[Item[], FilterValue[]]> {
   const { results, available_filters } = await fetchJson<MeLiResponse<GetItemsResponse[]>>(`https://api.mercadolibre.com/sites/MLA/search?${new URLSearchParams({
