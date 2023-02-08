@@ -17,7 +17,7 @@ export function toItemWithDetails(itemResponse: GetItemResponse, descriptionResp
     return {
         ...toItem(itemResponse),
         description: descriptionResponse.plain_text || descriptionResponse.text,
-        sold_quantity: itemResponse.sold_quantity
-
+        sold_quantity: itemResponse.sold_quantity,
+        category: itemResponse.category_id,
     }
 }

@@ -12,4 +12,5 @@ export interface Item {
 export interface ItemWithDetails extends Item {
     sold_quantity: number;
     description: string;
+    category: string;
 }
