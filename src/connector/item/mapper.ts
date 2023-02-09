@@ -9,7 +9,8 @@ export function toItem(response: ItemsResult): Item {
         id: response.id,
         picture: response.thumbnail,
         price: { amount: Math.floor(response.price), currency: response.currency_id, decimals: getDecimals(response.price) },
-        title: response.title
+        title: response.title,
+        category_id: response.category_id,
     }
 }
 
